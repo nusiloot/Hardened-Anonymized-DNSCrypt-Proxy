@@ -37,4 +37,4 @@ ip6tables -A OUTPUT -p udp -j DROP
 systemctl restart NetworkManager -f
 
 # Termination Message
-echo -e '\nAnonymized DNSCrypt-Proxy Successfully Configured !\nEnjoy Anonymity & Show Yout Middle Fingers ---> Snoopers !\n'
+echo -e '\nAnonymized DNSCrypt-Proxy-Linux Successfully Configured !\nEnjoy Anonymity & Show Yout Middle Fingers ---> Snoopers !\n'
