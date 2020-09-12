@@ -15,7 +15,7 @@ systemctl enable --now dnscrypt-proxy.socket dnscrypt-proxy.service -f
 rm -rf /etc/NetworkManager/NetworkManager.conf
 rm -rf /etc/resolv.conf
 rm -rf /etc/dnscrypt-proxy/dnscrypt-proxy.toml
-echo -e '[device]\nwifi.scan-rand-mac-address=yes\n\n[main]\ndns=none' >/etc/NetworkManager/NetworkManager.conf
+echo -e '[device]\nwifi.scan-rand-mac-address=yes\nethernet.cloned-mac-address=random\nwifi.cloned-mac-address=stable\n\n[main]\ndns=none' >/etc/NetworkManager/NetworkManager.conf
 echo -e 'nameserver 127.0.0.1\noptions edns0' > /etc/resolv.conf
 cp dnscrypt-proxy.toml /etc/dnscrypt-proxy/dnscrypt-proxy.toml
 echo -e 'Set DNS Resolver ---> 127.0.0.1 [Permanently] [There Is No Place Like 127.0.0.1]\n'
