@@ -28,4 +28,4 @@ systemctl start systemd-resolved -f
 systemctl restart NetworkManager -f
 
 # Termination Message
-echo -e '\nAnonymized DNSCrypt-Proxy Successfully Deconfigured !\nLet Snoopers --> Show You Their Middle Fingers !\n'
+echo -e '\nAnonymized DNSCrypt-Proxy-Linux Successfully Deconfigured !\nLet Snoopers --> Show You Their Middle Fingers !\n'
