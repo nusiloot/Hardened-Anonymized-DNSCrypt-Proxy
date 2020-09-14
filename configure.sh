@@ -24,10 +24,12 @@ echo -e 'Set DNS Resolver ---> 127.0.0.1 [Permanently] [There Is No Place Like 1
 systemctl stop --now systemd-resolved -f
 systemctl disable --now systemd-resolved -f
 systemctl start --now dnscrypt-proxy.socket dnscrypt-proxy.service -f
+
+# Restart & Check DNSCrypt-Proxy
 dnscrypt-proxy -config /etc/dnscrypt-proxy/dnscrypt-proxy.toml -service restart
 dnscrypt-proxy -config /etc/dnscrypt-proxy/dnscrypt-proxy.toml -check
 
-# Applying IPTables Ruleset
+# Applying IPTables/Firewall Ruleset
 iptables -t nat -A OUTPUT -p tcp ! -d 91.239.100.100 --dport 53 -j DNAT --to-destination 127.0.0.1:5354
 iptables -t nat -A OUTPUT -p udp ! -d 91.239.100.100 --dport 53 -j DNAT --to-destination 127.0.0.1:5354
 ip6tables -A OUTPUT -p tcp -j DROP
