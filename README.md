@@ -6,7 +6,6 @@
 > But For Linux, People Find It Hard To Configure DNSCrypt-Proxy Manually. But I Wanted To Keep It Simple, So It's Here !
 
 - #### Differences Between Default DNSCrypt-Proxy Project [dnscrypt-proxy.toml]
-
 - ✅ `DNSSEC` required
 - ✅ Enabled `dnscrypt_ephemeral_keys` feature (create a new, unique key for every single DNS query)
 - ✅ Enabled `anonymized_dns` feature (each resolver has 2 relays)
@@ -28,4 +27,5 @@ git clone https://github.com/BL4CKH47H4CK3R/Anonymized-DNSCrypt-Proxy-Linux.git 
 ```
 git clone https://github.com/BL4CKH47H4CK3R/Anonymized-DNSCrypt-Proxy-Linux.git && cd Anonymized-DNSCrypt-Proxy-Linux && chmod +x deconfigure.sh && sudo ./deconfigure.sh
 ```
+- #### For More Information Visit DNSCrypt-Proxy [Wiki](https://github.com/DNSCrypt/dnscrypt-proxy/wiki)
 - #### Original Credit Goes To [Frank Denis](https://github.com/jedisct1) For His Awesome [Project](https://github.com/DNSCrypt/dnscrypt-proxy) !
