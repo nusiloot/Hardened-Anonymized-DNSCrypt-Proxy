@@ -1,4 +1,4 @@
-# Anonymized-DNSCrypt-Proxy-Linux
+<h1 align=center>Anonymized-DNSCrypt-Proxy-Linux</h1>
 Automatically Configure & Deconfigure Anonymized-DNSCrypt-Proxy
 
 * #### Why This Project ?
