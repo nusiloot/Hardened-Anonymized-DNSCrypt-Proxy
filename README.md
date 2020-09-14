@@ -1,5 +1,5 @@
 <h1 align=center>Anonymized-DNSCrypt-Proxy-Linux</h1>
-<p align=center>Automatically Configure & Deconfigure Anonymized-DNSCrypt-Proxy</p>
+<p align=center>Automatically Configure/Deconfigure Anonymized-DNSCrypt-Proxy</p>
 
 - #### Why This Project ?
 > There Are Automated DNSCrypt-Proxy Client For Both [Windows](https://github.com/bitbeans/SimpleDnsCrypt) & [Android (Magisk Module)](https://git.nixnet.xyz/quindecim/dnscrypt-proxy-android) <br/>
