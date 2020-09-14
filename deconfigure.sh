@@ -8,11 +8,11 @@ echo -e '+                   Coder : BL4CKH47H4CK3R                    +'
 echo -e '+=============================================================+'
 echo
 
-echo -e 'Please Hold Your Horses !\nReverting All Settings To Default State . . .'
+echo -e 'Hold Your Horses !\nReverting All Settings To Default State . . .'
 
 # Disabling DNSCrypt-Proxy [Startup]
 systemctl disable --now dnscrypt-proxy.socket dnscrypt-proxy.service -f
-systemctl stop dnscrypt-proxy.socket dnscrypt-proxy.service -f
+systemctl stop --now dnscrypt-proxy.socket dnscrypt-proxy.service -f
 
 # Reverting DNSCrypt-Proxy Configurations
 rm -rf /etc/NetworkManager/NetworkManager.conf
@@ -22,10 +22,10 @@ echo -e '[device]\nwifi.scan-rand-mac-address=yes\nethernet.cloned-mac-address=r
 
 # Restarting SystemD-Resolved
 systemctl enable --now systemd-resolved -f
-systemctl start systemd-resolved -f
+systemctl start --now systemd-resolved -f
 
 # Restart NetworkManager
-systemctl restart NetworkManager -f
+systemctl restart --now NetworkManager -f
 
 # Termination Message
 echo -e '\nAnonymized DNSCrypt-Proxy-Linux Successfully Deconfigured !\nLet Snoopers --> Show You Their Middle Fingers !\n'
