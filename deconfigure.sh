@@ -22,7 +22,7 @@ echo -e '[device]\nwifi.scan-rand-mac-address=yes\nethernet.cloned-mac-address=r
 
 # Restarting SystemD-Resolved
 systemctl enable --now systemd-resolved -f
-systemctl start --now systemd-resolved -f
+systemctl restart --now systemd-resolved -f
 
 # Restart NetworkManager
 systemctl restart --now NetworkManager -f
