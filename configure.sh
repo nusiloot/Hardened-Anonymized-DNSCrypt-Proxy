@@ -9,6 +9,7 @@ echo -e '+=============================================================+'
 echo
 
 # Enabling DNSCrypt-Proxy [Startup]
+echo -e 'Enabling DNSCrypt-Proxy On System Boot . . .'
 systemctl enable --now dnscrypt-proxy.socket dnscrypt-proxy.service -f
 
 # Applying DNSCrypt-Proxy configurations
@@ -18,7 +19,7 @@ rm -rf /etc/dnscrypt-proxy/dnscrypt-proxy.toml
 echo -e '[device]\nwifi.scan-rand-mac-address=yes\nethernet.cloned-mac-address=random\nwifi.cloned-mac-address=stable\n\n[main]\ndns=none' >/etc/NetworkManager/NetworkManager.conf
 echo -e 'nameserver ::1\nnameserver 127.0.0.1\noptions edns0 single-request-reopen' > /etc/resolv.conf
 cp dnscrypt-proxy.toml /etc/dnscrypt-proxy/dnscrypt-proxy.toml
-echo -e 'Setting DNS Resolver ---> 127.0.0.1 [Permanently] [There Is No Place Like 127.0.0.1]'
+echo -e 'Setting DNS Resolver ---> 127.0.0.1 [Permanently] [There Is No Place Like 127.0.0.1]\n'
 
 # Configuring DNSCrypt-Proxy
 systemctl stop --now systemd-resolved -f
@@ -26,7 +27,7 @@ systemctl disable --now systemd-resolved -f
 systemctl start --now dnscrypt-proxy.socket dnscrypt-proxy.service -f
 
 # Restart & Check DNSCrypt-Proxy
-echo -e 'Checking DNSCrypt-Proxy Service Status . . .\n'
+echo -e 'Checking DNSCrypt-Proxy Service Status . . .'
 dnscrypt-proxy -config /etc/dnscrypt-proxy/dnscrypt-proxy.toml -service restart
 dnscrypt-proxy -config /etc/dnscrypt-proxy/dnscrypt-proxy.toml -check
 
