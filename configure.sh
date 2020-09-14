@@ -38,7 +38,7 @@ ip6tables -A OUTPUT -p tcp -j DROP
 ip6tables -A OUTPUT -p udp -j DROP
 
 # Restarting NetworkManager
-echo -e 'Restarting NetworkManager . . .\n'
+echo -e 'Restarting NetworkManager . . .'
 systemctl restart --now NetworkManager -f
 
 # Termination Message
