@@ -1,11 +1,11 @@
 #!/bin/bash
 
 echo
-echo -e '+==============================================================+'
-echo -e '+                Anonymized-DNSCrypt-Proxy-Linux               +'
-echo -e '+      Automatically Deconfigure Anonymized-DNSCrypt-Proxy      +'
-echo -e '+                    Coder : BL4CKH47H4CK3R                    +'
-echo -e '+==============================================================+'
+echo -e '+=======================================================================+'
+echo -e '+                     Anonymized-DNSCrypt-Proxy-Linux                   +'
+echo -e '+      Automatically Configure/Deconfigure Anonymized-DNSCrypt-Proxy      +'
+echo -e '+                          Coder : BL4CKH47H4CK3R                       +'
+echo -e '+=======================================================================+'
 echo
 
 echo -e 'Hold Your Horses !\nReverting All Settings To Default State . . .'
