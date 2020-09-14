@@ -21,9 +21,9 @@ cp dnscrypt-proxy.toml /etc/dnscrypt-proxy/dnscrypt-proxy.toml
 echo -e 'Set DNS Resolver ---> 127.0.0.1 [Permanently] [There Is No Place Like 127.0.0.1]\n'
 
 # Configuring DNSCrypt-Proxy
-systemctl stop systemd-resolved -f
+systemctl stop --now systemd-resolved -f
 systemctl disable --now systemd-resolved -f
-systemctl start dnscrypt-proxy.socket dnscrypt-proxy.service -f
+systemctl start --now dnscrypt-proxy.socket dnscrypt-proxy.service -f
 dnscrypt-proxy -config /etc/dnscrypt-proxy/dnscrypt-proxy.toml -service restart
 dnscrypt-proxy -config /etc/dnscrypt-proxy/dnscrypt-proxy.toml -check
 
@@ -34,7 +34,7 @@ ip6tables -A OUTPUT -p tcp -j DROP
 ip6tables -A OUTPUT -p udp -j DROP
 
 # Restarting NetworkManager
-systemctl restart NetworkManager -f
+systemctl restart --now NetworkManager -f
 
 # Termination Message
-echo -e '\nAnonymized DNSCrypt-Proxy-Linux Successfully Configured !\nEnjoy Anonymity & Show Yout Middle Fingers ---> Snoopers !\n'
+echo -e '\nAnonymized DNSCrypt-Proxy-Linux Successfully Configured !\nEnjoy Anonymity & Show Your Middle Fingers ---> Snoopers !\n'
