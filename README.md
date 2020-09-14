@@ -2,7 +2,7 @@
 Automatically Configure Anonymized-DNSCrypt-Proxy
 
 * ### Why This Project ?
-* > There Are Automated DNSCrypt-Proxy Client For Both [Windows](https://github.com/bitbeans/SimpleDnsCrypt) & [Android](https://git.nixnet.xyz/quindecim/dnscrypt-proxy-android) But For Linux, People Find It Hard To Configure Manually. So Its Here !
+There Are Automated DNSCrypt-Proxy Client For Both [Windows](https://github.com/bitbeans/SimpleDnsCrypt) & [Android](https://git.nixnet.xyz/quindecim/dnscrypt-proxy-android) But For Linux, People Find It Hard To Configure Manually. So It's Here !
 
 * > #### Configure [Copy-Paste]
 ```
