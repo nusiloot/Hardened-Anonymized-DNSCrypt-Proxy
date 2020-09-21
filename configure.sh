@@ -8,9 +8,6 @@ echo -e '+                          Coder : BL4CKH47H4CK3R                      
 echo -e '+=======================================================================+'
 echo
 
-echo -e 'Killing NetworkManager ...'
-systemctl stop --now NetworkManager -f
-
 echo -e 'Disabling SystemD-Resolved ...'
 systemctl stop --now systemd-resolved -f
 systemctl disable --now systemd-resolved -f
