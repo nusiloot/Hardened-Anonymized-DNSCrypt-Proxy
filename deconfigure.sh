@@ -19,6 +19,17 @@ systemctl stop --now dnscrypt-proxy.service -f
 systemctl disable --now dnscrypt-proxy.socket -f
 systemctl disable --now dnscrypt-proxy.service -f
 
+echo -e '\nUninstalling DNSCrypt-Proxy ...\n'
+if ! [ -z `which pacman 2> /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Arch
+then pacman -Rcnsu dnscrypt-proxy --noconfirm
+fi
+if ! [ -z `which apt-get 2> /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Debian
+then apt purge dnscrypt-proxy -y
+fi
+if ! [ -z `which dnf 2> /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Gentoo
+then emerge dnscrypt-proxy -Cv
+fi
+
 echo -e 'Reverting DNSCrypt-Proxy Configurations ...'
 rm -rf /etc/NetworkManager/NetworkManager.conf
 rm -rf /etc/resolv.conf
