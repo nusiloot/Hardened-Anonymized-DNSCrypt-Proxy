@@ -19,7 +19,7 @@ if ! [ -z `which dnf 2> /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Ge
 then emerge dnscrypt-proxy -av
 fi
 
-echo -e 'Disabling SystemD-Resolved ...'
+echo -e '\nDisabling SystemD-Resolved ...'
 systemctl stop --now systemd-resolved -f
 systemctl disable --now systemd-resolved -f
 
@@ -31,13 +31,13 @@ cp dnscrypt-proxy.toml /etc/dnscrypt-proxy/dnscrypt-proxy.toml
 echo -e '[device]\nwifi.scan-rand-mac-address=yes\nethernet.cloned-mac-address=random\nwifi.cloned-mac-address=stable\n\n[main]\ndns=none' >/etc/NetworkManager/NetworkManager.conf
 echo -e 'nameserver ::1\nnameserver 127.0.0.1\noptions edns0 single-request-reopen' > /etc/resolv.conf
 
-echo -e '\nInitializing  DNSCrypt-Proxy ...'
+echo -e 'Initializing  DNSCrypt-Proxy ...'
 systemctl enable --now dnscrypt-proxy.socket -f
 systemctl enable --now dnscrypt-proxy.service -f
 systemctl start --now dnscrypt-proxy.socket -f
 systemctl start --now dnscrypt-proxy.service -f
 
-echo -e '\nChecking DNSCrypt-Proxy Service Status . . .'
+echo -e '\nChecking DNSCrypt-Proxy Service Status . . .\n'
 dnscrypt-proxy -config /etc/dnscrypt-proxy/dnscrypt-proxy.toml -service restart
 dnscrypt-proxy -config /etc/dnscrypt-proxy/dnscrypt-proxy.toml -check
 
