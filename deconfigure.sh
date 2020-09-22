@@ -14,10 +14,7 @@ echo -e 'Killing NetworkManager ...'
 systemctl stop --now NetworkManager -f
 
 echo -e 'Disabling DNSCrypt-Proxy ...'
-systemctl stop --now dnscrypt-proxy.socket -f
-systemctl stop --now dnscrypt-proxy.service -f
-systemctl disable --now dnscrypt-proxy.socket -f
-systemctl disable --now dnscrypt-proxy.service -f
+systemctl disable --now dnscrypt-proxy.socket dnscrypt-proxy.service -f
 
 echo -e '\nUninstalling DNSCrypt-Proxy ...\n'
 if ! [ -z `which pacman 2> /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Arch
@@ -38,7 +35,6 @@ echo -e '[device]\nwifi.scan-rand-mac-address=yes\nethernet.cloned-mac-address=r
 
 echo 'Restarting SystemD-Resolved ...'
 systemctl enable --now systemd-resolved -f
-systemctl restart --now systemd-resolved -f
 
 echo -e 'Restarting NetworkManager ...'
 systemctl restart --now NetworkManager -f
