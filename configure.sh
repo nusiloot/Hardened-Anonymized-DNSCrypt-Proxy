@@ -15,7 +15,7 @@ then pacman -Sy dnscrypt-proxy --noconfirm
 fi
 
 if ! [ -z `which apt 2 > /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Debian
-then echo "deb https://deb.debian.org/debian/ testing main" | sudo tee /etc/apt/sources.list.d/testing.list && apt update && apt install -t testing dnscrypt-proxy -y
+then echo "deb https://deb.debian.org/debian/ testing main" | sudo tee /etc/apt/sources.list.d/testing.list && apt update && apt install -y -t testing dnscrypt-proxy
 fi
 
 if ! [ -z `which dnf 2 > /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Gentoo
@@ -23,7 +23,7 @@ then emerge dnscrypt-proxy -av
 fi
 
 if ! [ -z `which apk 2 > /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Alpine
-then apk add --upgrade dnscrypt-proxy
+then sudo sh -c 'echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositories' && apk add --upgrade dnscrypt-proxy
 fi
 
 if ! [ -z `which dnf 2 > /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Fedora
