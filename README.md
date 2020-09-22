@@ -40,6 +40,6 @@ git clone https://github.com/BL4CKH47H4CK3R/Anonymized-DNSCrypt-Proxy-Linux.git 
 ```
 git clone https://github.com/BL4CKH47H4CK3R/Anonymized-DNSCrypt-Proxy-Linux.git && cd Anonymized-DNSCrypt-Proxy-Linux && chmod +x deconfigure.sh && sudo ./deconfigure.sh
 ```
-- #### Original Credit Goes To -
+- #### All Credit Goes To -
 > [Frank Denis](https://github.com/jedisct1)
 > For His Awesome [Project](https://github.com/DNSCrypt/dnscrypt-proxy) !
