@@ -18,7 +18,7 @@ if ! [ -z `which apt 2 > /dev/null` ] && [ `nmcli networking` = "enabled" ]; # D
 then echo "deb https://deb.debian.org/debian/ testing main" | sudo tee /etc/apt/sources.list.d/testing.list && apt update && apt install -y -t testing dnscrypt-proxy
 fi
 
-if ! [ -z `which dnf 2 > /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Gentoo
+if ! [ -z `which emerge 2 > /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Gentoo
 then emerge dnscrypt-proxy -av
 fi
 
