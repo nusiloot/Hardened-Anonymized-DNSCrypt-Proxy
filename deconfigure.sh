@@ -19,7 +19,7 @@ echo -e '\nUninstalling DNSCrypt-Proxy ...\n'
 if ! [ -z `which pacman 2 > /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Arch
 then pacman -Rcnsu dnscrypt-proxy --noconfirm
 fi
-if ! [ -z `which apt-get 2 > /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Debian
+if ! [ -z `which apt 2 > /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Debian
 then apt purge -y dnscrypt-proxy
 fi
 if ! [ -z `which emerge 2 > /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Gentoo
