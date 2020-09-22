@@ -5,11 +5,11 @@
 > There Are Automated DNSCrypt-Proxy Client For Both [Windows](https://github.com/bitbeans/SimpleDnsCrypt) & [Android (Magisk Module)](https://git.nixnet.xyz/quindecim/dnscrypt-proxy-android) <br/>
 > But For Linux, People Find It Hard To Configure DNSCrypt-Proxy Manually. But I Wanted To Keep It Simple, So It's Here !
 
-- #### Currently Supported
+- #### Supported Linux
 
 - `Alpine`
-- `Arch Based Distro`
-- `Debian Based Distro`
+- `Arch Based Linux`
+- `Debian Based Linux`
 - `Fedora`
 - `Gentoo`
 - `Mageia`
