@@ -7,14 +7,14 @@
 
 - #### Currently Supported
 
-- Alpine
-- Arch Based Distro
-- Debian Based Distro
-- Fedora
-- Gentoo
-- Mageia
-- OpenSUSE
-- Solus
+- `Alpine`
+- `Arch Based Distro`
+- `Debian Based Distro`
+- `Fedora`
+- `Gentoo`
+- `Mageia`
+- `OpenSUSE`
+- `Solus`
 
 - #### Differences Between Default DNSCrypt-Proxy Project Config
 
