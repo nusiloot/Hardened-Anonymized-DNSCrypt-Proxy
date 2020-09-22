@@ -23,7 +23,7 @@ then emerge dnscrypt-proxy -av
 fi
 
 if ! [ -z `which apk 2 > /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Alpine
-then sudo sh -c 'echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositories' && apk add --upgrade dnscrypt-proxy
+then sh -c 'echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositories' && apk add --upgrade dnscrypt-proxy
 fi
 
 if ! [ -z `which dnf 2 > /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Fedora
