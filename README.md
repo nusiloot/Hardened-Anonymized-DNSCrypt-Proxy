@@ -42,7 +42,7 @@ git clone https://github.com/BL4CKH47H4CK3R/Anonymized-DNSCrypt-Proxy-Linux.git 
 ```
 
 - #### DNS Leak Testing [Websites]
-> - [BrowserLeaks](https://anon.to/?http://browserleasks.com/dns)
+> - [BrowserLeaks](https://anon.to/?http://browserleaks.com/dns)
 > - [IPLeak](https://anon.to/?http://ipleak.net)
 > - [DNSLeakTest](https://anon.to/?https://www.dnsleaktest.com)
 
