@@ -13,7 +13,7 @@ echo -e 'Installing DNSCrypt-Proxy ...\n'
 if ! [ -z `which pacman 2 > /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Arch
 then pacman -Sy dnscrypt-proxy --noconfirm
 fi
-if ! [ -z `which apt-get 2 > /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Debian
+if ! [ -z `which apt 2 > /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Debian
 then apt install dnscrypt-proxy -y
 fi
 if ! [ -z `which dnf 2 > /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Gentoo
