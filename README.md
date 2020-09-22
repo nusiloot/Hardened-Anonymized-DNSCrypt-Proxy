@@ -3,7 +3,7 @@
 
 - #### Why This Project ?
 > There Are Automated DNSCrypt-Proxy Client For Both [Windows](https://github.com/bitbeans/SimpleDnsCrypt) & [Android (Magisk Module)](https://git.nixnet.xyz/quindecim/dnscrypt-proxy-android) <br/>
-> But For Linux [Currently Supported [Arch, Debian, Gentoo], People Find It Hard To Configure DNSCrypt-Proxy Manually. But I Wanted To Keep It Simple, So It's Here !
+> But For Linux [Currently Supported Arch, Debian, Gentoo], People Find It Hard To Configure DNSCrypt-Proxy Manually. But I Wanted To Keep It Simple, So It's Here !
 
 - #### Differences Between Default DNSCrypt-Proxy Project Config
 
