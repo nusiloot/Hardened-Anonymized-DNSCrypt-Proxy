@@ -15,6 +15,7 @@
 - `Mageia`
 - `OpenSUSE`
 - `Solus`
+- `Slackware 14.2`
 
 - #### Differences Between Default DNSCrypt-Proxy Project Config
 
