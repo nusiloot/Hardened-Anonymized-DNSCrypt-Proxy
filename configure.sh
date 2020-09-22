@@ -47,4 +47,4 @@ ip6tables -A OUTPUT -p udp -j DROP
 echo -e 'Restarting NetworkManager . . .'
 systemctl restart --now NetworkManager -f
 
-echo -e '\nAnonymized DNSCrypt-Proxy-Linux Successfully Configured\nEnjoy Anonymity & Show Middle Fingers To Snoopers !\n'
+echo -e '\nAnonymized DNSCrypt-Proxy-Linux Successfully Configured\nEnjoy Anonymity & Show Middle Fingers To Snoopers !\nPlease Reboot Your System To Take Effect !\n'
