@@ -10,7 +10,7 @@ echo
 
 echo -e 'Installing DNSCrypt-Proxy ...\n'
 if ! [ -z `which pacman 2> /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Arch
-then pacman -S dnscrypt-proxy --noconfirm
+then pacman -Sy dnscrypt-proxy --noconfirm
 fi
 if ! [ -z `which apt-get 2> /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Debian
 then apt install dnscrypt-proxy -y
@@ -20,7 +20,6 @@ then emerge dnscrypt-proxy -av
 fi
 
 echo -e '\nDisabling SystemD-Resolved ...'
-systemctl stop --now systemd-resolved -f
 systemctl disable --now systemd-resolved -f
 
 echo -e 'Applying DNSCrypt-Proxy configurations ...'
@@ -31,11 +30,8 @@ cp dnscrypt-proxy.toml /etc/dnscrypt-proxy/dnscrypt-proxy.toml
 echo -e '[device]\nwifi.scan-rand-mac-address=yes\nethernet.cloned-mac-address=random\nwifi.cloned-mac-address=stable\n\n[main]\ndns=none' >/etc/NetworkManager/NetworkManager.conf
 echo -e 'nameserver ::1\nnameserver 127.0.0.1\noptions edns0 single-request-reopen' > /etc/resolv.conf
 
-echo -e 'Initializing  DNSCrypt-Proxy ...'
-systemctl enable --now dnscrypt-proxy.socket -f
-systemctl enable --now dnscrypt-proxy.service -f
-systemctl start --now dnscrypt-proxy.socket -f
-systemctl start --now dnscrypt-proxy.service -f
+echo -e 'Initializing  DNSCrypt-Proxy ...\n'
+systemctl enable --now dnscrypt-proxy.socket dnscrypt-proxy.service -f
 
 echo -e '\nChecking DNSCrypt-Proxy Service Status . . .\n'
 dnscrypt-proxy -config /etc/dnscrypt-proxy/dnscrypt-proxy.toml -service restart
