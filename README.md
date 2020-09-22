@@ -5,7 +5,7 @@
 > There Are Automated DNSCrypt-Proxy Client For Both [Windows](https://github.com/bitbeans/SimpleDnsCrypt) & [Android (Magisk Module)](https://git.nixnet.xyz/quindecim/dnscrypt-proxy-android) <br/>
 > But For Linux, People Find It Hard To Configure DNSCrypt-Proxy Manually. But I Wanted To Keep It Simple, So It's Here !
 
-- #### Supported Linux
+- #### Supported Linux Distributions
 
 > - `Alpine`
 > - `Arch Based Linux`
@@ -40,6 +40,12 @@ git clone https://github.com/BL4CKH47H4CK3R/Anonymized-DNSCrypt-Proxy-Linux.git 
 ```
 git clone https://github.com/BL4CKH47H4CK3R/Anonymized-DNSCrypt-Proxy-Linux.git && cd Anonymized-DNSCrypt-Proxy-Linux && chmod +x deconfigure.sh && sudo ./deconfigure.sh
 ```
+
+- #### DNS Leak Testing [Websites]
+> - [BrowserLeaks](https://anon.to/?http://browserleasks.com/dns)
+> - [IPLeak](https://anon.to/?http://ipleak.net)
+> - [DNSLeakTest](https://anon.to/?https://www.dnsleaktest.com)
+
 - #### All Credit Goes To -
 > [Frank Denis](https://github.com/jedisct1)
 > For His Awesome [Project](https://github.com/DNSCrypt/dnscrypt-proxy) !
