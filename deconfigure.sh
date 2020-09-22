@@ -9,7 +9,6 @@ echo -e '+======================================================================
 echo
 
 echo -e 'Hold Your Horses !\nReverting All Settings To Default State . . .\n'
-
 echo -e 'Killing NetworkManager ...'
 systemctl stop --now NetworkManager -f
 
