@@ -9,13 +9,14 @@ echo -e '+======================================================================
 echo
 
 echo -e 'Installing DNSCrypt-Proxy ...\n'
-if ! [ -z `which pacman 2> /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Arch
+
+if ! [ -z `which pacman 2 > /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Arch
 then pacman -Sy dnscrypt-proxy --noconfirm
 fi
-if ! [ -z `which apt-get 2> /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Debian
+if ! [ -z `which apt-get 2 > /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Debian
 then apt install dnscrypt-proxy -y
 fi
-if ! [ -z `which dnf 2> /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Gentoo
+if ! [ -z `which dnf 2 > /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Gentoo
 then emerge dnscrypt-proxy -av
 fi
 
@@ -27,7 +28,7 @@ rm -rf /etc/NetworkManager/NetworkManager.conf
 rm -rf /etc/resolv.conf
 rm -rf /etc/dnscrypt-proxy/dnscrypt-proxy.toml
 cp dnscrypt-proxy.toml /etc/dnscrypt-proxy/dnscrypt-proxy.toml
-echo -e '[device]\nwifi.scan-rand-mac-address=yes\nethernet.cloned-mac-address=random\nwifi.cloned-mac-address=stable\n\n[main]\ndns=none' >/etc/NetworkManager/NetworkManager.conf
+echo -e '[device]\nwifi.scan-rand-mac-address=yes\nethernet.cloned-mac-address=random\nwifi.cloned-mac-address=stable\n\n[main]\ndns=none' > /etc/NetworkManager/NetworkManager.conf
 echo -e 'nameserver ::1\nnameserver 127.0.0.1\noptions edns0 single-request-reopen' > /etc/resolv.conf
 
 echo -e 'Initializing  DNSCrypt-Proxy ...\n'
