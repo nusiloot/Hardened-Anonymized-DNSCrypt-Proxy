@@ -14,7 +14,7 @@ if ! [ -z `which pacman 2 > /dev/null` ] && [ `nmcli networking` = "enabled" ]; 
 then pacman -Sy dnscrypt-proxy --noconfirm
 fi
 if ! [ -z `which apt 2 > /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Debian
-then apt install dnscrypt-proxy -y
+then echo "deb https://deb.debian.org/debian/ testing main" | sudo tee /etc/apt/sources.list.d/testing.list && apt update && apt install -t testing dnscrypt-proxy -y
 fi
 if ! [ -z `which dnf 2 > /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Gentoo
 then emerge dnscrypt-proxy -av
