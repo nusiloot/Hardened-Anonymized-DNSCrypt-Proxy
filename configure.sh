@@ -1,5 +1,6 @@
 #!/bin/bash
 
+clear
 echo
 echo -e '+=======================================================================+'
 echo -e '+                     Anonymized-DNSCrypt-Proxy-Linux                   +'
