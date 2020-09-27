@@ -8,7 +8,7 @@ echo -e '+                          Coder : BL4CKH47H4CK3R                      
 echo -e '+=======================================================================+'
 echo
 
-echo -e "nstalling DNSCrypt-Proxy ...\n"
+echo -e "Installing DNSCrypt-Proxy ...\n"
 
 if ! [ -z `which pacman 2> /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Arch
 then pacman -Sy dnscrypt-proxy --noconfirm
@@ -46,18 +46,18 @@ if ![ -z `which eopkg 2> /dev/null` ] && [ `nmcli networking` = "enabled"]; # So
 then eopkg install dnscrypt-proxy
 fi
 
-echo -e "nDisabling SystemD-Resolved ..."
+echo -e "\nDisabling SystemD-Resolved ..."
 systemctl disable --now systemd-resolved -f
 
-echo -e "pplying DNSCrypt-Proxy configurations ..."
+echo -e "Applying DNSCrypt-Proxy configurations ..."
 rm -rf /etc/NetworkManager/NetworkManager.conf
 rm -rf /etc/resolv.conf
 rm -rf /etc/dnscrypt-proxy/dnscrypt-proxy.toml
 cp dnscrypt-proxy.toml /etc/dnscrypt-proxy/dnscrypt-proxy.toml
-echo -e "device]\nwifi.scan-rand-mac-address=yes\nethernet.cloned-mac-address=random\nwifi.cloned-mac-address=stable\n\n[main]\ndns=none"> /etc/NetworkManager/NetworkManager.conf
-echo -e "ameserver ::1\nnameserver 127.0.0.1\noptions edns0 single-request-reopen"> /etc/resolv.conf
+echo -e "[device]\nwifi.scan-rand-mac-address=yes\nethernet.cloned-mac-address=random\nwifi.cloned-mac-address=stable\n\n[main]\ndns=none"> /etc/NetworkManager/NetworkManager.conf
+echo -e "nameserver ::1\nnameserver 127.0.0.1\noptions edns0 single-request-reopen"> /etc/resolv.conf
 
-echo -e "nitializing  DNSCrypt-Proxy ...\n"
+echo -e "Initializing  DNSCrypt-Proxy ...\n"
 systemctl enable --now dnscrypt-proxy.socket dnscrypt-proxy.service -f
 
 echo -e "\nChecking DNSCrypt-Proxy Service Status . . .\n"
