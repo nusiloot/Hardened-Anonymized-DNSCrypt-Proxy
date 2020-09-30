@@ -43,12 +43,8 @@ echo -e "\nDisabling SystemD-Resolved ..."
 systemctl disable --now systemd-resolved -f
 
 echo -e "Applying DNSCrypt-Proxy configurations ..."
-rm -rf /etc/NetworkManager/NetworkManager.conf
-rm -rf /etc/resolv.conf
 rm -rf /etc/dnscrypt-proxy/dnscrypt-proxy.toml
 cp dnscrypt-proxy.toml /etc/dnscrypt-proxy/dnscrypt-proxy.toml
-echo -e "[device]\nwifi.scan-rand-mac-address=yes\nethernet.cloned-mac-address=random\nwifi.cloned-mac-address=stable\n\n[main]\ndns=none"> /etc/NetworkManager/NetworkManager.conf
-echo -e "nameserver ::1\nnameserver 127.0.0.1\noptions edns0 single-request-reopen"> /etc/resolv.conf
 
 echo -e "Initializing  DNSCrypt-Proxy ...\n"
 systemctl enable --now dnscrypt-proxy.socket dnscrypt-proxy.service -f
@@ -63,7 +59,11 @@ iptables -t nat -A OUTPUT -p udp ! -d 91.239.100.100 --dport 53 -j DNAT --to-des
 ip6tables -A OUTPUT -p tcp -j DROP
 ip6tables -A OUTPUT -p udp -j DROP
 
-echo -e "Restarting NetworkManager . . ."
+echo -e "Configuring & Restarting NetworkManager . . ."
+rm -rf /etc/NetworkManager/NetworkManager.conf
+rm -rf /etc/resolv.conf
+echo -e "[device]\nwifi.scan-rand-mac-address=yes\nethernet.cloned-mac-address=random\nwifi.cloned-mac-address=stable\n\n[main]\ndns=none" > /etc/NetworkManager/NetworkManager.conf
+echo -e "nameserver ::1\nnameserver 127.0.0.1\noptions edns0 single-request-reopen" > /etc/resolv.conf
 systemctl restart --now NetworkManager -f
 
 echo -e "\nAnonymized DNSCrypt-Proxy-Linux Successfully Configured\nEnjoy Anonymity & Show Middle Fingers To Snoopers !\nPlease Reboot Your System To Take Effect !\n"
