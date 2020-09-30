@@ -29,13 +29,13 @@ fi
 if ! [ -z `which urpmi 2> /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Mageia
 then urpmi.update -a && urpmi dnscrypt-proxy
 fi
-if ![ -z `which zypper 2> /dev/null` ] && [ `nmcli networking` = "enabled"]; # OpenSUSE
+if ! [ -z `which zypper 2> /dev/null` ] && [ `nmcli networking` = "enabled"]; # OpenSUSE
 then zypper install dnscrypt-proxy
 fi
-if ![ -z `which upgradepkg 2> /dev/null` ] && [ `nmcli networking` = "enabled"]; # Slackware 14.2
+if ! [ -z `which upgradepkg 2> /dev/null` ] && [ `nmcli networking` = "enabled"]; # Slackware 14.2
 then upgradepkg --install-new dnscrypt-proxy-2.0.42-x86_64-1_slonly.txz
 fi
-if ![ -z `which eopkg 2> /dev/null` ] && [ `nmcli networking` = "enabled"]; # Solus
+if ! [ -z `which eopkg 2> /dev/null` ] && [ `nmcli networking` = "enabled"]; # Solus
 then eopkg install dnscrypt-proxy
 fi
 
