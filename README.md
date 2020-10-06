@@ -32,13 +32,9 @@
 > - ℹ️ Use [UncensoredDNS](https://blog.uncensoreddns.org/) as fallback resolver instead [CloudFlare](https://iscloudflaresafeyet.com/)
 > - ℹ️ Use `acsacsar-ams-ipv4` (NL), `dnscrypt.eu-dk` (DK), `dnscrypt.eu-nl` (NL), `dnscrypt.uk-ipv4` (UK), `meganerd` (NL), `publicarray-au` (AUS), `scaleway-ams` (NL), `scaleway-fr` (FR), `v.dnscrypt.uk-ipv4` (UK) and `yofiji-se-ipv4` (SE)
 
-- #### Configure [Copy-Paste]
+- #### Configure/Deconfigure [Copy-Paste]
 ```
-git clone https://github.com/BL4CKH47H4CK3R/Anonymized-DNSCrypt-Proxy-Linux.git && cd Anonymized-DNSCrypt-Proxy-Linux && chmod +x configure.sh && sudo ./configure.sh
-```
-- #### Deconfigure [Copy-Paste]
-```
-git clone https://github.com/BL4CKH47H4CK3R/Anonymized-DNSCrypt-Proxy-Linux.git && cd Anonymized-DNSCrypt-Proxy-Linux && chmod +x deconfigure.sh && sudo ./deconfigure.sh
+git clone https://github.com/BL4CKH47H4CK3R/Anonymized-DNSCrypt-Proxy-Linux.git && cd Anonymized-DNSCrypt-Proxy-Linux && chmod +x run.sh && sudo ./run.sh
 ```
 
 - #### DNS Leak Testing [Websites]
