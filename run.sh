@@ -9,7 +9,7 @@ echo -e "#######################################################################
 
 if [[ ${UID} != 0 ]]
 then
-	echo -e "Are You Drunk, Please Run As Root !"
+	echo -e "Run The Script As Root, Are Your Drunk Dude ?"
 else
 	echo -e "[1] Configure"
 	echo -e "[2] Deconfigure"
