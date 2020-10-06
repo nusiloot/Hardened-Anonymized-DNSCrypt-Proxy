@@ -4,7 +4,6 @@ if [[ ${UID} != 0 ]]
 then
 	echo -e "Are You Drunk, Please Run As Root !"
 else
-	echo
 	echo -e "\n#########################################################################"
 	echo -e "#                     Anonymized-DNSCrypt-Proxy-Linux                   #"
 	echo -e "#      Automatically Configure/Deconfigure Anonymized-DNSCrypt-Proxy    #"
