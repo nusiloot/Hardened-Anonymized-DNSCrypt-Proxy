@@ -73,7 +73,10 @@ else
 		echo -e "nameserver ::1\nnameserver 127.0.0.1\noptions edns0 single-request-reopen" > /etc/resolv.conf
 		systemctl restart --now NetworkManager -f
 		
-		echo -e "\n[*] Anonymized DNSCrypt-Proxy-Linux Successfully Configured\n[*] Enjoy Anonymity & Show Middle Fingers To Snoopers !\n[*] Please Reboot Your System To Take Effect !\n"	
+		echo -e "\n[*] Anonymized DNSCrypt-Proxy-Linux Successfully Configured !
+		[*] Enjoy Anonymity & Kick The Asshole Snoopers !
+		[*] Rebooting Within 3s ...\n"
+		sleep 3 && reboot
 	
 	elif [[ ${input} == 2 ]]
 	then
@@ -107,6 +110,9 @@ else
 		echo -e "[*] Restarting NetworkManager ..."
 		systemctl restart --now NetworkManager -f
 		
-		echo -e "\n[*] Anonymized DNSCrypt-Proxy-Linux Successfully Deconfigured\n[*] Let Snoopers Show You Their Middle Fingers\n[*] Please Reboot Your System To Take Effect !\n"
+		echo -e "\n[*] Anonymized DNSCrypt-Proxy-Linux Successfully Deconfigured
+		[*] Let Snoopers Show You Their Middle Fingers
+		[*] Rebooting Within 3s ...\n"
+                sleep 3 && reboot
 	fi
 fi
