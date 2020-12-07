@@ -1,5 +1,5 @@
-<h1 align=center>Hardened-Anonymized-DNSCrypt-Proxy-Linux</h1>
-<p align=center>Hardened-Anonymized-DNSCrypt-Proxy For Linux</p>
+<h1 align=center>Hardened-Anonymized-DNSCrypt-Proxy</h1>
+<p align=center>Wipe Snoopers Out Of Your Networks</p>
 
 - #### Why This Project ?
 > There Are Automated DNSCrypt-Proxy Client For Both [Windows](https://github.com/bitbeans/SimpleDnsCrypt) & [Android (Magisk Module)](https://git.nixnet.xyz/quindecim/dnscrypt-proxy-android) <br/>
