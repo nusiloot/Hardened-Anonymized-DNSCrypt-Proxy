@@ -1,11 +1,11 @@
 #!/bin/bash
 
 clear
-echo -e "\n#########################################################################"
-echo -e "#                    Anonymized-DNSCrypt-Proxy-Linux                    #"
-echo -e "#              Hardened Anonymized-DNSCrypt-Proxy For Linux             #"
-echo -e "#                         Coder : BL4CKH47H4CK3R                        #"
-echo -e "#########################################################################\n"
+echo -e "\n###########################################################################"
+echo -e "#                     Hardened-Anonymized-DNSCrypt-Proxy                   #"
+echo -e "#                     Wipe Snoopers Out Of Your Networks                   #"
+echo -e "#                            Coder : BL4CKH47H4CK3R                        #"
+echo -e "############################################################################\n"
 
 if [[ ${UID} != 0 ]]
 then
