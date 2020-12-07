@@ -1,4 +1,4 @@
-<h1 align=center>Anonymized-DNSCrypt-Proxy-Linux</h1>
+<h1 align=center>Hardened-Anonymized-DNSCrypt-Proxy-Linux</h1>
 <p align=center>Hardened Anonymized-DNSCrypt-Proxy For Linux</p>
 
 - #### Why This Project ?
