@@ -20,7 +20,7 @@ else
 		echo -e "\n[*] Installing DNSCrypt-Proxy ...\n"
 		if ! [ -z `which pacman 2> /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Arch
 		then
-			pacman -Sy dnscrypt-proxy --needed --noconfirm
+			pacman -Syy dnscrypt-proxy --needed --noconfirm
 		elif ! [ -z `which apt 2> /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Debian
 		then
 			echo "deb https://deb.debian.org/debian/ testing main" | sudo tee /etc/apt/sources.list.d/testing.list && apt update && apt install -y -t testing dnscrypt-proxy
@@ -63,8 +63,8 @@ else
 		echo -e "\n[*] Applying IPTables/Firewall Ruleset . . ."
 		iptables -t nat -A OUTPUT -p tcp ! -d 91.239.100.100 --dport 53 -j DNAT --to-destination 127.0.0.1:5354
 		iptables -t nat -A OUTPUT -p udp ! -d 91.239.100.100 --dport 53 -j DNAT --to-destination 127.0.0.1:5354
-		ip6tables -A OUTPUT -p tcp -j DROP
-		ip6tables -A OUTPUT -p udp -j DROP
+		# ip6tables -t nat -A OUTPUT -p udp ! -d 91.239.100.100 --dport 53 -j DNAT --to-destination [::1]:5354
+		# ip6tables -t nat -A OUTPUT -p tcp ! -d 91.239.100.100 --dport 53 -j DNAT --to-destination [::1]:5354					
 		
 		echo -e "[*] Configuring & Restarting NetworkManager . . ."
 		rm -rf /etc/NetworkManager/NetworkManager.conf
