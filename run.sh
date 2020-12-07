@@ -20,7 +20,7 @@ else
 		echo -e "\n[*] Installing DNSCrypt-Proxy ...\n"
 		if ! [ -z `which pacman 2> /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Arch
 		then
-			pacman -Sy dnscrypt-proxy --needed --noconfirm
+			pacman -Syy dnscrypt-proxy --needed --noconfirm
 		elif ! [ -z `which apt 2> /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Debian
 		then
 			echo "deb https://deb.debian.org/debian/ testing main" | sudo tee /etc/apt/sources.list.d/testing.list && apt update && apt install -y -t testing dnscrypt-proxy
@@ -56,7 +56,7 @@ else
 		
 		echo -e "[*] Initializing  DNSCrypt-Proxy ...\n"
 		systemctl enable --now dnscrypt-proxy.socket dnscrypt-proxy.service -f
-		echo -e "\nChecking DNSCrypt-Proxy Service Status . . .\n"
+		echo -e "\n[*] Checking DNSCrypt-Proxy Service Status . . .\n"
 		dnscrypt-proxy -config /etc/dnscrypt-proxy/dnscrypt-proxy.toml -service restart
 		dnscrypt-proxy -config /etc/dnscrypt-proxy/dnscrypt-proxy.toml -check
 		
