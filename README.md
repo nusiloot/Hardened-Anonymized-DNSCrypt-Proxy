@@ -36,7 +36,7 @@
 
 - #### Configure/Deconfigure [Copy-Paste]
 ```
-git clone https://github.com/BL4CKH47H4CK3R/Anonymized-DNSCrypt-Proxy-Linux.git
+git clone https://github.com/BL4CKH47H4CK3R/Hardened-Anonymized-DNSCrypt-Proxy.git
 cd Anonymized-DNSCrypt-Proxy-Linux
 chmod +x Hardened-Anonymized-DNSCrypt-Proxy.sh
 sudo ./Hardened-Anonymized-DNSCrypt-Proxy.sh
