@@ -25,29 +25,36 @@ else
 		if ! [ -z `which pacman 2> /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Arch
 		then
 			pacman -S dnscrypt-proxy --needed --noconfirm
+		
 		elif ! [ -z `which apt 2> /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Debian
 		then
-			echo "deb https://deb.debian.org/debian/ testing main" | sudo tee /etc/apt/sources.list.d/testing.list
-			apt update && apt install -y -t testing dnscrypt-proxy
+			curl -O http://ftp.br.debian.org/debian/pool/main/d/dnscrypt-proxy/dnscrypt-proxy_2.0.44+ds1-3_amd64.deb
+			apt install -y dnscrypt-proxy_2.0.44+ds1-3_amd64.deb && rm dnscrypt-proxy_2.0.44+ds1-3_amd64.deb
+		
 		elif ! [ -z `which emerge 2> /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Gentoo
 		then
 			emerge dnscrypt-proxy -av
+		
 		elif ! [ -z `which apk 2> /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Alpine
 		then
-			sh -c 'echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositories'
-			apk add --upgrade dnscrypt-proxy
+			sh -c 'echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositories' && apk add --upgrade dnscrypt-proxy
+		
 		elif ! [ -z `which dnf 2> /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Fedora
 		then
 			dnf install dnscrypt-proxy
+		
 		elif ! [ -z `which urpmi 2> /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Mageia
 		then
 			urpmi.update -a && urpmi dnscrypt-proxy
+		
 		elif ! [ -z `which zypper 2> /dev/null` ] && [ `nmcli networking` = "enabled"]; # OpenSUSE
 		then
 			zypper install dnscrypt-proxy
+		
 		elif ! [ -z `which upgradepkg 2> /dev/null` ] && [ `nmcli networking` = "enabled"]; # Slackware 14.2
 		then
 			upgradepkg --install-new dnscrypt-proxy-2.0.42-x86_64-1_slonly.txz
+		
 		elif ! [ -z `which eopkg 2> /dev/null` ] && [ `nmcli networking` = "enabled"]; # Solus
 		then
 			eopkg install dnscrypt-proxy
