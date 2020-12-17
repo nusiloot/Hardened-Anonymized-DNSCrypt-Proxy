@@ -19,20 +19,20 @@
 
 - #### Differences from the main dnscrypt-proxy project
 
-> - `server_names` = `acsacsar-ams-ipv4` [NLD], `arvind-io` [IND], `bcn-dnscrypt` [ESP], `d0wn-tz-ns1` [TZA], `dnscrypt.be` [BEL], `dnscrypt.ca-1` [CAN], `dnscrypt.ca-2` [CAN], `dnscrypt.eu-dk` [DNK], `dnscrypt.eu-nl` [NLD], `dnscrypt.one` [DEU], `dnscrypt.pl` [POL], `dnscrypt.uk-ipv4` [GBR], `ev-to` [CAN], `ev-va` [CAN], `faelix-ch-ipv4` [CHE], `faelix-uk-ipv4` [GBR], `ffmuc.net` [DEU], `jp.tiar.app` [JPN], `meganerd` [NLD], `plan9-dns` [USA], `publicarray-au` [AUS], `sarpel-dns-istanbul` [TUR], `scaleway-ams` [NLD], `scaleway-fr` [FRA], `serbica` [NLD], `skyfighter-dns` [NLD], `v.dnscrypt.uk-ipv4` [GBR], `ventricle.us` [USA] are the resolvers in use.
+- `server_names` = `acsacsar-ams-ipv4` [NLD], `arvind-io` [IND], `bcn-dnscrypt` [ESP], `d0wn-tz-ns1` [TZA], `dnscrypt.be` [BEL], `dnscrypt.ca-1` [CAN], `dnscrypt.ca-2` [CAN], `dnscrypt.eu-dk` [DNK], `dnscrypt.eu-nl` [NLD], `dnscrypt.one` [DEU], `dnscrypt.pl` [POL], `dnscrypt.uk-ipv4` [GBR], `ev-canada` [CAN], `faelix-ch-ipv4` [CHE], `faelix-uk-ipv4` [GBR], `ffmuc.net` [DEU], `jp.tiar.app` [JPN], `meganerd` [NLD], `plan9-dns` [USA], `publicarray-au` [AUS], `sarpel-dns-istanbul` [TUR], `scaleway-ams` [NLD], `scaleway-fr` [FRA], `serbica` [NLD], `skyfighter-dns` [NLD], `v.dnscrypt.uk-ipv4` [GBR], `ventricle.us` [USA] are the resolvers in use.
 
-> - `doh_servers` = `false` (disable servers implementing the `DNS-over-HTTPS` protocol)
-> - `require_dnssec` = `true` (server must support `DNSSEC` security extension)
-> - `timeout` = `1000` (set the max. response time of a single DNS query from `5000` to `1000` ms.)
-> - `blocked_query_response` = `'refused'` (set `refused` response to blocked queries)
-> - `dnscrypt_ephemeral_keys` = `true` (create a new, unique key for every single DNS query)
-> - `fallback_resolvers` = `['91.239.100.100:53']` (use [UncensoredDNS](https://blog.uncensoreddns.org/) instead [CloudFlare](https://iscloudflaresafeyet.com/))
-> - `netprobe_address` = `'91.239.100.100:53'` (use [UncensoredDNS](https://blog.uncensoreddns.org/) instead [CloudFlare](https://iscloudflaresafeyet.com/))
-> - `block_ipv6` = `true` (immediately respond to IPv6-related queries with an empty response)
-> - `blocked_names_file`, `blocked_ips_file`, `allowed_names_file` and `allowed_ips_file` options enabled. (you can use the related files, created in `/sdcard/dnscrypt-proxy/`, or `/data/media/0/dnscrypt-proxy/` to filter the web content)
-> - `anonymized_dns` feature enabled. (`routes` are indirect ways to reach DNSCrypt servers, each resolver has 2 relays assigned)
-> - `skip_incompatible` = `true` (skip resolvers incompatible with anonymization instead of using them directly)
-> - `direct_cert_fallback` = `false` (prevent direct connections through the resolvers for failed certificate retrieved via relay)
+- `doh_servers` = `false` (disable servers implementing the `DNS-over-HTTPS` protocol)
+- `require_dnssec` = `true` (server must support `DNSSEC` security extension)
+- `timeout` = `1000` (set the max. response time of a single DNS query from `5000` to `1000` ms.)
+- `blocked_query_response` = `'refused'` (set `refused` response to blocked queries)
+- `dnscrypt_ephemeral_keys` = `true` (create a new, unique key for every single DNS query)
+- `fallback_resolvers` = `['91.239.100.100:53']` (use [UncensoredDNS](https://blog.uncensoreddns.org/) instead [CloudFlare](https://iscloudflaresafeyet.com/))
+- `netprobe_address` = `'91.239.100.100:53'` (use [UncensoredDNS](https://blog.uncensoreddns.org/) instead [CloudFlare](https://iscloudflaresafeyet.com/))
+- `block_ipv6` = `true` (immediately respond to IPv6-related queries with an empty response)
+- `blocked_names_file`, `blocked_ips_file`, `allowed_names_file` and `allowed_ips_file` options enabled. (you can now filter your web content, to know how, please refer to the [official documentation](https://github.com/DNSCrypt/dnscrypt-proxy/wiki/Filters) or take a look at my [block repository](https://git.nixnet.services/quindecim/block))
+- `anonymized_dns` feature enabled. (`routes` are indirect ways to reach DNSCrypt servers, each resolver has 2 relays assigned)
+- `skip_incompatible` = `true` (skip resolvers incompatible with anonymization instead of using them directly)
+- `direct_cert_fallback` = `false` (prevent direct connections through the resolvers for failed certificate retrieved via relay)
 
 - #### Configure/Deconfigure [Copy-Paste]
 ```
