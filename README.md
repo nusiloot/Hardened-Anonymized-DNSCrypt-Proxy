@@ -36,10 +36,8 @@
 
 - #### Configure/Deconfigure [Copy-Paste]
 ```
-git clone https://github.com/BL4CKH47H4CK3R/Hardened-Anonymized-DNSCrypt-Proxy.git
-cd Hardened-Anonymized-DNSCrypt-Proxy
-chmod +x run.sh
-sudo ./run.sh
+git clone https://github.com/BL4CKH47H4CK3R/Hardened-Anonymized-DNSCrypt-Proxy.git && cd "$(basename "$_" .git)"
+chmod +x run.sh && sudo ./run.sh
 ```
 
 - #### DNS Leak Testing [Websites]
