@@ -22,6 +22,7 @@ else
 		echo -e "==================================="
 		echo -e "|  Installing DNSCrypt-Proxy ...  |"
 		echo -e "==================================="
+		
 		if ! [ -z `which pacman 2> /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Arch
 		then
 			pacman -S dnscrypt-proxy --needed --noconfirm
@@ -64,28 +65,34 @@ else
 		echo -e "======================================"
 		echo -e "|    Disabling SystemD-Resolved ...  |"
 		echo -e "======================================"
+		
 		systemctl disable --now systemd-resolved -f
 
 		echo -e "================================================="
 		echo -e "|   Applying DNSCrypt-Proxy configurations ...  |"
 		echo -e "================================================="
+		
 		rm -rf /etc/dnscrypt-proxy/dnscrypt-proxy.toml
 		cp dnscrypt-proxy.toml /etc/dnscrypt-proxy/dnscrypt-proxy.toml
 
 		echo -e "========================================"
 		echo -e "|   Initializing  DNSCrypt-Proxy ...   |"
 		echo -e "========================================"
+		
 		systemctl enable --now dnscrypt-proxy.socket dnscrypt-proxy.service -f
 		
 		echo -e "===================================================="
 		echo -e "|   Checking DNSCrypt-Proxy Service Status . . .   |"
 		echo -e "===================================================="
+		
 		dnscrypt-proxy -config /etc/dnscrypt-proxy/dnscrypt-proxy.toml -service restart
 		dnscrypt-proxy -config /etc/dnscrypt-proxy/dnscrypt-proxy.toml -check
 
 		echo -e "================================================"
 		echo -e "|   Applying IPTables/Firewall Ruleset . . .   |"
 		echo -e "================================================"
+		
+		systemctl disable --now ip6tables.service -f && systemctl enable --now iptables.service -f
 		iptables -t nat -A OUTPUT -p tcp ! -d 91.239.100.100 --dport 53 -j DNAT --to-destination 127.0.0.1:5354
 		iptables -t nat -A OUTPUT -p udp ! -d 91.239.100.100 --dport 53 -j DNAT --to-destination 127.0.0.1:5354
 		# ip6tables -t nat -A OUTPUT -p udp ! -d 91.239.100.100 --dport 53 -j DNAT --to-destination [::1]:5354
@@ -94,6 +101,7 @@ else
 		echo -e "===================================================="
 		echo -e "|   Configuring & Restarting NetworkManager . . .  |"
 		echo -e "===================================================="
+		
 		rm -rf /etc/NetworkManager/NetworkManager.conf
 		rm -rf /etc/resolv.conf
 		echo -e "[device]\nwifi.scan-rand-mac-address=yes" >> /etc/NetworkManager/NetworkManager.conf
@@ -114,16 +122,19 @@ else
 		echo -e "==================================================="
 		echo -e "|  Killing NetworkManager ...  |"
 		echo -e "================================"
+		
 		systemctl stop --now NetworkManager -f
 
 		echo -e "=================================="
 		echo -e "|  Disabling DNSCrypt-Proxy ...  |"
 		echo -e "=================================="
+		
 		systemctl disable --now dnscrypt-proxy.socket dnscrypt-proxy.service -f
 		
 		echo -e "====================================="
 		echo -e "|  Uninstalling DNSCrypt-Proxy ...  |"
 		echo -e "====================================="
+		
 		if ! [ -z `which pacman 2 > /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Arch
 		then
 			pacman -Rcnsu dnscrypt-proxy --noconfirm
@@ -138,6 +149,7 @@ else
 		echo -e "================================================="
 		echo -e "|  Reverting DNSCrypt-Proxy Configurations ...  |"
 		echo -e "================================================="
+		
 		rm -rf /etc/NetworkManager/NetworkManager.conf
 		rm -rf /etc/resolv.conf
 		rm -rf /etc/dnscrypt-proxy/dnscrypt-proxy.toml
@@ -148,11 +160,13 @@ else
 		echo -e "====================================="
 		echo -e "|  Restarting SystemD-Resolved ...  |"
 		echo -e "====================================="
+		
 		systemctl enable --now systemd-resolved -f
 
 		echo -e "==================================="
 		echo -e "|  Restarting NetworkManager ...  |"
 		echo -e "==================================="
+		
 		systemctl restart --now NetworkManager -f
 		
 		echo -e "===================================="
