@@ -37,7 +37,8 @@ else
 		
 		elif ! [ -z `which apk 2> /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Alpine
 		then
-			sh -c 'echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositories' && apk add --upgrade dnscrypt-proxy
+			sh -c 'echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositories'
+			apk add --upgrade dnscrypt-proxy
 		
 		elif ! [ -z `which dnf 2> /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Fedora
 		then
