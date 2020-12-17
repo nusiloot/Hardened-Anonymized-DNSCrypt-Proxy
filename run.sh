@@ -29,7 +29,7 @@ else
 		
 		elif ! [ -z `which apt 2> /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Debian
 		then
-			curl -O http://ftp.br.debian.org/debian/pool/main/d/dnscrypt-proxy/dnscrypt-proxy_2.0.44+ds1-3_amd64.deb
+			curl -O http://ftp.debian.org/debian/pool/main/d/dnscrypt-proxy/dnscrypt-proxy_2.0.44+ds1-3_amd64.deb
 			apt install -y dnscrypt-proxy_2.0.44+ds1-3_amd64.deb && rm dnscrypt-proxy_2.0.44+ds1-3_amd64.deb
 		
 		elif ! [ -z `which emerge 2> /dev/null` ] && [ `nmcli networking` = "enabled" ]; # Gentoo
